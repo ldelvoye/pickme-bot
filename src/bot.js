@@ -65,6 +65,13 @@ client.on(Events.MessageCreate, async (message) => {
   }
 
   const rolled = Math.random() < chance;
+  let outcome;
+  if (rolled) {
+    outcome = "hit";
+  } else {
+    outcome = "miss";
+  }
+  console.log(`Uninvited ping in #${message.channel.name} from ${message.author.tag}: ${outcome}`);
   if (!rolled) {
     return;
   }
