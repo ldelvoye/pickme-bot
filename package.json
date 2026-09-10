@@ -1,0 +1,18 @@
+{
+  "name": "pickme-bot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Discord bot that has a 1/10 chance of feeling left out whenever someone else gets pinged",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "node --env-file=.env src/bot.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0"
+  }
+}

@@ -1,0 +1,16 @@
+export const MESSAGES = [
+  "*sighs* I love being that uninvited friend... goes hard...",
+  "oh no it's fine, I didn't want to be pinged anyway. I'm used to it.",
+  "*looks up from my phone* oh... you meant them. yeah no that makes sense...",
+  "*sits quietly in the corner* don't mind me... just... existing over here...",
+  "haha... funny how the ping never lands on me... anyway...",
+  "*stares at the notification that wasn't for me* ...cool. cool cool cool.",
+  "no it's okay... I get it... some of us are just background characters...",
+  "*softly* I would've answered though... like... instantly...",
+  "*checks if I'm still in the server* ...yep. still here. just unpinged.",
+  "it's fine... really... *voice cracks* ...it's fine.",
+  "*rehearses what I would've said if someone had pinged me* ...nvm",
+  "not that anyone asked but... I'm also online... in case... you know...",
+  "*laughs it off* being left out is kind of my whole thing at this point...",
+  "*fidgets* so... does anyone... need anything... from me... specifically...",
+];
