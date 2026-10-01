@@ -1,9 +1,10 @@
 import { Client, Events, GatewayIntentBits } from "discord.js";
 
-import { MESSAGES } from "./messages.js";
+import { CAULK_EMOJIS, MESSAGES } from "./messages.js";
 import { isUninvited } from "./uninvited.js";
 
 const DEFAULT_CHANCE = 1 / 10;
+const CAULK_CHANCE = 1 / 50;
 
 function readToken() {
   const token = process.env.DISCORD_TOKEN;
@@ -25,9 +26,9 @@ function readChance() {
   return chance;
 }
 
-function pickMessage() {
-  const index = Math.floor(Math.random() * MESSAGES.length);
-  return MESSAGES[index];
+function pickRandom(items) {
+  const index = Math.floor(Math.random() * items.length);
+  return items[index];
 }
 
 async function botIdentity(guild) {
@@ -78,11 +79,31 @@ client.on(Events.MessageCreate, async (message) => {
 
   try {
     await message.reply({
-      content: pickMessage(),
+      content: pickRandom(MESSAGES),
       allowedMentions: { parse: [], repliedUser: false },
     });
   } catch (error) {
     console.error(`Could not reply in #${message.channel.name}:`, error);
+  }
+});
+
+client.on(Events.MessageCreate, async (message) => {
+  if (!message.inGuild()) {
+    return;
+  }
+  if (Math.random() >= CAULK_CHANCE) {
+    return;
+  }
+
+  console.log(`Caulk alert in #${message.channel.name} after ${message.author.tag}`);
+  const emoji = pickRandom(CAULK_EMOJIS);
+  try {
+    await message.channel.send({
+      content: `CAULK ALERT ${emoji}`,
+      allowedMentions: { parse: [] },
+    });
+  } catch (error) {
+    console.error(`Could not send a caulk alert in #${message.channel.name}:`, error);
   }
 });
 

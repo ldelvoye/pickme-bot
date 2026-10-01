@@ -14,3 +14,8 @@ export const MESSAGES = [
   "*laughs it off* being left out is kind of my whole thing at this point...",
   "*fidgets* so... does anyone... need anything... from me... specifically...",
 ];
+
+export const CAULK_EMOJIS = [
+  "🚨", "🔨", "🪚", "🧱", "🛁", "🚿", "🪟", "🔧", "🪛", "🧰",
+  "💦", "🔥", "😱", "😳", "👀", "🫡", "💀", "🤯", "📢", "⚠️",
+];

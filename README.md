@@ -4,6 +4,8 @@ A Discord bot that feels left out. Whenever someone explicitly pings a user or a
 
 Only `@user` and `@role` mentions typed into the message count. Reply pings, `@everyone` and `@here` are ignored, and so is any message that includes the bot, directly or through a role it holds. If it was invited, it has nothing to complain about.
 
+Separately, every message in a server has a 1/50 chance of being followed by `CAULK ALERT` and a random emoji. That includes messages from bots, this one's own caulk alerts among them.
+
 ## Discord setup
 
 1. Create an application in the [developer portal](https://discord.com/developers/applications).
@@ -30,7 +32,7 @@ The repo ships a `Dockerfile`, so a Railway service pointed at it builds and run
 
 ## Messages
 
-The bank lives in `src/messages.js`. Add to it freely. Replies go out with all pings disabled, so a mention in there won't notify anyone.
+The bank lives in `src/messages.js`, next to the caulk alert emoji. Add to either freely. Replies go out with all pings disabled, so a mention in there won't notify anyone.
 
 ## Tests
 
